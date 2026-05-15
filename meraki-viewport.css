@@ -1,0 +1,72 @@
+/* 精肴 MERAKI — 全站视口与安全区（底部内容完整可见） */
+
+html {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+html,
+body {
+  height: auto;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* 手机画布：随视口伸缩，避免固定 932px 在矮屏被裁切 */
+.device,
+.sy-device,
+.me-device,
+.gc-device,
+.xx-device,
+.dh-device,
+.jxt-device {
+  min-height: 100vh;
+  min-height: 100dvh;
+  height: min(var(--canvas-h, 932px), 100dvh);
+  max-height: 100dvh;
+}
+
+/* 启动 / 登录底文案：抬高安全区 */
+.device {
+  --caption-line-bottom: calc(
+    env(safe-area-inset-bottom, 0px) + clamp(3.25rem, 8vmin, 5rem) + 150px + 1.5rem
+  );
+}
+
+/* 带底栏的主滚动区 */
+.sy-scroll,
+.me-scroll,
+.gc-scroll,
+.xx-scroll {
+  padding-bottom: calc(6.5rem + 40px + env(safe-area-inset-bottom, 0px) + 1.5rem);
+}
+
+/* 对话记录区 */
+.dh-chat,
+.jxt-chat {
+  padding-bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px) + 1.5rem);
+}
+
+/* 全站底部导航 */
+.mk-tabbar {
+  bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
+}
+
+/* 对话输入栏 */
+.dh-composer,
+.jxt-composer {
+  padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px) + 0.75rem);
+}
+
+/* 登录 / 注册主区 */
+.page {
+  padding-bottom: calc(1.75rem + env(safe-area-inset-bottom, 0px) + 1.5rem);
+}
+
+.splash__content {
+  padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 1.5rem);
+}
