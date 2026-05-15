@@ -1,0 +1,406 @@
+/* 精肴 MERAKI — 登录页（iPhone 17 Pro Max 画布 430×932） */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: #f2f2f4;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue",
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ---------- 画布 ---------- */
+.device {
+  --canvas-w: 430px;
+  --canvas-h: 932px;
+  --brand-h: 40%;
+  --login-h: 60%;
+  --green: #2f6f52;
+  --green-press: #265a44;
+  --green-light: #5cb88a;
+  --line: #e6e8e6;
+  --placeholder: #9aa099;
+  --muted: #8a908a;
+  --accent-coral: #e86d7a;
+  --accent-coral-press: #d45a68;
+  /* 与首页 .slogan 同一底边距与字号 token */
+  --caption-line-bottom: calc(env(safe-area-inset-bottom, 0px) + clamp(3.25rem, 8vmin, 5rem) + 150px);
+  --caption-font-size: calc(clamp(11px, 2.8vmin, 12px) + 6px);
+
+  width: var(--canvas-w);
+  height: var(--canvas-h);
+  margin: 0 auto;
+  background: #ffffff;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  position: relative;
+}
+
+/* ---------- 上半：品牌区 ---------- */
+.brand-zone {
+  flex: 0 0 var(--brand-h);
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 4vmin, 2rem) clamp(1.25rem, 5vw, 2rem);
+}
+
+.brand-zone__inner {
+  width: 100%;
+  max-width: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-cluster {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-stack {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+.logo-with-hearts {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(46vw, 200px);
+}
+
+/* 爱心发射原点：logo 几何中心 */
+.heart-field {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  overflow: visible;
+  z-index: 1;
+}
+
+/* logo 主标 */
+.logo1 {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  display: block;
+  opacity: 0;
+  transform: scale(0.92) translateY(8px);
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.05));
+}
+
+.logo1.logo1--in {
+  animation: logoIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes logoIn {
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* ---------- 爱心（CSS 绘制，单次播放） ---------- */
+.heart-particle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+
+.css-heart {
+  --sz: 10px;
+  --c: #f8c4d4;
+  width: var(--sz);
+  height: var(--sz);
+  flex-shrink: 0;
+  background: var(--c);
+  transform: rotate(-45deg);
+  position: relative;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.css-heart::before,
+.css-heart::after {
+  content: "";
+  position: absolute;
+  width: var(--sz);
+  height: var(--sz);
+  background: var(--c);
+  border-radius: 50%;
+}
+
+.css-heart::before {
+  top: calc(-0.5 * var(--sz));
+  left: 0;
+}
+
+.css-heart::after {
+  left: calc(0.5 * var(--sz));
+  top: 0;
+}
+
+@keyframes heartOnce {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) rotate(calc(var(--rot, 0) * 1deg)) scale(0.5);
+  }
+  18% {
+    opacity: 0.82;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--tx), var(--ty), 0) rotate(calc(var(--rot-end, 6) * 1deg))
+      scale(0.88);
+  }
+}
+
+.heart-particle--once {
+  animation-name: heartOnce;
+  animation-timing-function: cubic-bezier(0.28, 0.52, 0.42, 1);
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-duration: var(--dur, 1.05s);
+  animation-delay: var(--delay, 0s);
+}
+
+/* ---------- 下半：登录区（稿图：输入中线 + 忘记右对齐 + 按钮 + 底文案） ---------- */
+.login-zone {
+  flex: 0 0 var(--login-h);
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  padding: clamp(0.75rem, 2.5vmin, 1.25rem) clamp(1.35rem, 5vw, 2rem)
+    calc(1rem + env(safe-area-inset-bottom, 0px));
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.login-zone.login-zone--in {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.login-stack {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  width: 100%;
+  max-width: 19.5rem;
+  margin: 0 auto;
+  /* logo 下方整块登录内容上移 */
+  transform: translateY(-20px);
+}
+
+.login-form {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: clamp(1.2rem, 3.2vmin, 1.65rem);
+}
+
+.field-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 下划线输入行：图标 | 文本，整宽底线 */
+.field {
+  display: grid;
+  grid-template-columns: 1.75rem 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 0.7rem;
+  align-items: center;
+}
+
+.field__icon {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: #9a9d9a;
+}
+
+.field__icon-svg {
+  display: block;
+  flex-shrink: 0;
+}
+
+.field__input {
+  grid-column: 2;
+  grid-row: 1;
+  width: 100%;
+  min-width: 0;
+  padding: 0.35rem 0 0.55rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #2a2a2a;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  transition: color 0.15s ease;
+}
+
+.field__input::placeholder {
+  color: var(--placeholder);
+}
+
+.field__input:focus {
+  color: #1a1a1a;
+}
+
+.field__rule {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  height: 1px;
+  margin-top: 0.15rem;
+  background: var(--line);
+  border-radius: 1px;
+}
+
+.field:focus-within .field__rule {
+  background: rgba(47, 111, 82, 0.35);
+}
+
+/* 忘记密码：紧贴密码下划线下方，右对齐 */
+.field-forgot {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 0.05rem;
+}
+
+.link-forgot {
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.link-forgot:active {
+  color: #6d756d;
+  opacity: 0.9;
+}
+
+@media (hover: hover) {
+  .link-forgot:hover {
+    color: #6d756d;
+  }
+}
+
+/* 主按钮样式见 meraki-buttons.css */
+.login-form .meraki-btn {
+  margin-top: clamp(1.35rem, 4vmin, 2.15rem);
+}
+
+/* 与首页 slogan 同一条「底边线」+ 同字号（相对 .device 绝对定位，避免被父级 transform 截断） */
+.login-footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: var(--caption-line-bottom);
+  margin: 0;
+  padding: 0;
+  padding-left: 0.06em;
+  text-align: center;
+  font-family: "Yuanti SC", "Yuanti TC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+    sans-serif;
+  font-size: var(--caption-font-size);
+  font-weight: 300;
+  letter-spacing: 0.06em;
+  line-height: 1.55;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.login-footer.login-footer--in {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.login-footer__muted {
+  color: #141414;
+}
+
+.login-footer__accent {
+  margin-left: 0.08em;
+  color: var(--accent-coral);
+  font-weight: 400;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.login-footer__accent:active {
+  color: var(--accent-coral-press);
+  opacity: 0.92;
+}
+
+@media (hover: hover) {
+  .login-footer__accent:hover {
+    color: var(--accent-coral-press);
+  }
+}

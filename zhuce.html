@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>注册 · 精肴 MERAKI</title>
+    <link rel="stylesheet" href="zhuce.css" />
+    <link rel="stylesheet" href="meraki-buttons.css" />
+  </head>
+  <body>
+    <div class="device" role="presentation">
+      <div class="page zhuce-page">
+        <div class="zhuce-shell">
+          <!-- 顶部品牌：logo1 + logo2 横排，入场动画由 JS 加 class -->
+          <header class="zhuce-brand" id="zhuce-brand" aria-label="品牌">
+          <div class="zhuce-brand__row">
+            <img
+              class="zhuce-brand__logo1"
+              src="images/logo1.png"
+              alt="MERAKI"
+              width="148"
+              decoding="async"
+            />
+            <img
+              class="zhuce-brand__logo2"
+              src="images/logo2.png"
+              alt="精肴"
+              width="163"
+              decoding="async"
+            />
+          </div>
+        </header>
+
+        <main class="zhuce-main">
+          <form class="zhuce-form" id="zhuce-form" action="#" method="post" novalidate>
+            <label class="sr-only" for="username">用户名</label>
+            <input
+              class="zhuce-input"
+              type="text"
+              id="username"
+              name="username"
+              autocomplete="username"
+              placeholder="请输入用户名"
+            />
+
+            <label class="sr-only" for="phone">手机号</label>
+            <input
+              class="zhuce-input"
+              type="tel"
+              id="phone"
+              name="phone"
+              inputmode="numeric"
+              autocomplete="tel"
+              placeholder="请输入手机号"
+            />
+
+            <label class="sr-only" for="password">密码</label>
+            <input
+              class="zhuce-input"
+              type="password"
+              id="password"
+              name="password"
+              autocomplete="new-password"
+              placeholder="请输入密码"
+            />
+
+            <label class="sr-only" for="password2">确认密码</label>
+            <input
+              class="zhuce-input"
+              type="password"
+              id="password2"
+              name="password2"
+              autocomplete="new-password"
+              placeholder="请再次输入密码"
+            />
+
+            <button class="meraki-btn" type="submit">注册</button>
+
+            <div class="zhuce-agree">
+              <input type="checkbox" class="zhuce-agree__native" id="agree" name="agree" />
+              <label class="zhuce-agree__label" for="agree">
+                <span class="zhuce-agree__box" aria-hidden="true"></span>
+                <span class="zhuce-agree__text">
+                  我已阅读并同意
+                  <a class="zhuce-agree__link" href="#" id="link-terms">《用户协议》</a>
+                  <a class="zhuce-agree__link" href="#" id="link-privacy">《隐私政策》</a>
+                </span>
+              </label>
+            </div>
+          </form>
+
+          <p class="zhuce-foot">
+            <span class="zhuce-foot__muted">已有账号？</span><a class="zhuce-foot__login" href="denglu.html">立即登录</a>
+          </p>
+        </main>
+        </div>
+      </div>
+    </div>
+
+    <script src="zhuce.js" defer></script>
+  </body>
+</html>

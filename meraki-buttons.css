@@ -1,0 +1,75 @@
+/* 精肴 MERAKI — 全站主按钮（立体渐变 + 按压反馈，与登录页一致） */
+
+.meraki-btn {
+  position: relative;
+  width: 100%;
+  padding: 0.95rem 1.25rem;
+  font-size: 1.02rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.16);
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 999px;
+  cursor: pointer;
+  touch-action: manipulation;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0) 36%),
+    linear-gradient(90deg, var(--green-light) 0%, var(--green) 52%, #256347 100%);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.35) inset,
+    0 -8px 14px rgba(0, 0, 0, 0.08) inset,
+    0 10px 24px rgba(47, 111, 82, 0.32),
+    0 3px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.16s cubic-bezier(0.33, 0.72, 0.45, 1), box-shadow 0.2s ease, filter 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.meraki-btn::before {
+  content: "";
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  top: 7%;
+  height: 42%;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  opacity: 0.45;
+  pointer-events: none;
+  transition: opacity 0.18s ease;
+}
+
+@media (hover: hover) {
+  .meraki-btn:hover {
+    filter: brightness(1.04);
+  }
+}
+
+.meraki-btn:focus {
+  outline: none;
+}
+
+.meraki-btn:focus-visible {
+  box-shadow:
+    0 0 0 3px rgba(47, 111, 82, 0.28),
+    0 1px 0 rgba(255, 255, 255, 0.35) inset,
+    0 -8px 14px rgba(0, 0, 0, 0.08) inset,
+    0 10px 24px rgba(47, 111, 82, 0.32),
+    0 3px 8px rgba(0, 0, 0, 0.06);
+}
+
+.meraki-btn:active {
+  filter: brightness(0.88) saturate(1.05);
+  transform: scale(0.97) translateY(2px);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.22) inset,
+    0 1px 0 rgba(255, 255, 255, 0.06) inset,
+    0 2px 6px rgba(47, 111, 82, 0.2),
+    0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+.meraki-btn:active::before {
+  opacity: 0.22;
+}

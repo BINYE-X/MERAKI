@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>登录 · 精肴 MERAKI</title>
+    <link rel="stylesheet" href="denglu.css" />
+    <link rel="stylesheet" href="meraki-buttons.css" />
+  </head>
+  <body>
+    <div class="device" role="presentation">
+      <div class="page">
+        <!-- 上约 40%：仅 logo1 + 爱心（与设计稿上半区一致） -->
+        <section class="brand-zone" aria-label="品牌">
+          <div class="brand-zone__inner">
+            <div class="brand-cluster">
+              <div class="logo-stack">
+                <div class="logo-with-hearts">
+                  <div class="heart-field" id="heart-field" aria-hidden="true"></div>
+                  <img
+                    class="logo1"
+                    id="logo1"
+                    src="images/logo1.png"
+                    alt="MERAKI"
+                    width="200"
+                    decoding="async"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 下约 60%：下划线输入 → 忘记密码右对齐 → 按钮 → 底部文案 -->
+        <section class="login-zone" id="login-zone" aria-label="登录">
+          <div class="login-stack">
+            <form class="login-form" id="login-form" action="#" method="post" novalidate>
+              <!-- 手机号：左图标 + 占位 + 底部分割线 -->
+              <div class="field">
+                <span class="field__icon" aria-hidden="true">
+                  <svg class="field__icon-svg" viewBox="0 0 24 24" width="22" height="22">
+                    <circle cx="12" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.35" />
+                    <path
+                      d="M6 20.5v-.8c0-2.4 2.6-4.2 6-4.2s6 1.8 6 4.2v.8"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.35"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </span>
+                <label class="sr-only" for="phone">手机号</label>
+                <input
+                  class="field__input"
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  inputmode="numeric"
+                  autocomplete="tel"
+                  placeholder="请输入手机号"
+                />
+                <span class="field__rule" aria-hidden="true"></span>
+              </div>
+
+              <!-- 密码：左三线图标 + 底部分割线 -->
+              <div class="field-block">
+                <div class="field">
+                  <span class="field__icon" aria-hidden="true">
+                    <svg class="field__icon-svg" viewBox="0 0 24 24" width="22" height="22">
+                      <path
+                        d="M5 9h14M5 12h14M5 15h14"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.35"
+                        stroke-linecap="round"
+                      />
+                    </svg>
+                  </span>
+                  <label class="sr-only" for="password">密码</label>
+                  <input
+                    class="field__input"
+                    type="password"
+                    id="password"
+                    name="password"
+                    autocomplete="current-password"
+                    placeholder="请输入密码"
+                  />
+                  <span class="field__rule" aria-hidden="true"></span>
+                </div>
+                <div class="field-forgot">
+                  <a class="link-forgot" href="#" id="link-forgot">忘记密码？</a>
+                </div>
+              </div>
+
+              <button class="meraki-btn" type="submit">点击登录</button>
+            </form>
+          </div>
+        </section>
+
+        <p class="login-footer" id="login-footer">
+          <span class="login-footer__muted">没有账户？</span><a class="login-footer__accent" href="zhuce.html" id="link-register">立即创建！</a>
+        </p>
+      </div>
+    </div>
+
+    <script src="denglu.js" defer></script>
+  </body>
+</html>

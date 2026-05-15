@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>首页 · 精肴 MERAKI</title>
+    <link rel="stylesheet" href="shouye.css" />
+    <link rel="stylesheet" href="meraki-tabbar.css" />
+  </head>
+  <body data-active-tab="0">
+    <div class="device sy-device" role="presentation">
+      <div class="sy-app">
+        <div class="sy-scroll" id="sy-scroll">
+          <header class="sy-header">
+            <p class="sy-brand">精肴<span class="sy-brand-en">MERAKI</span></p>
+            <h1 class="sy-greet">
+              Hi，欢迎来到<span class="sy-greet__accent">精肴</span>
+            </h1>
+            <p class="sy-lead">今天吃些什么好呢？</p>
+            <p class="sy-lead">快来看看吧！</p>
+          </header>
+
+          <form class="sy-search" id="sy-search" role="search" action="#" method="get">
+            <label class="sr-only" for="sy-search-input">搜索</label>
+            <input
+              class="sy-search__input"
+              type="search"
+              id="sy-search-input"
+              name="q"
+              placeholder="Please search here ..."
+              autocomplete="off"
+            />
+            <button class="sy-search__btn" type="submit" aria-label="搜索">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="6.5" />
+                <path d="M16 16l5 5" stroke-linecap="round" />
+              </svg>
+            </button>
+          </form>
+
+          <section class="sy-board" aria-labelledby="sy-board-title">
+            <div class="sy-board__head">
+              <h2 class="sy-board__title" id="sy-board-title">榜单</h2>
+              <button type="button" class="sy-board__more" id="sy-board-more">
+                <span class="sy-board__more-text">VIEW ALL</span>
+                <span class="sy-board__more-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+            <div class="sy-grid">
+              <article class="sy-food-card">
+                <div class="sy-food-card__img">
+                  <img src="images/food1.jpg" alt="点赞周榜" width="400" height="288" loading="lazy" decoding="async" />
+                </div>
+                <h3 class="sy-food-card__label">点赞周榜</h3>
+              </article>
+              <article class="sy-food-card">
+                <div class="sy-food-card__img">
+                  <img src="images/food2.jpg" alt="点赞月榜" width="400" height="288" loading="lazy" decoding="async" />
+                </div>
+                <h3 class="sy-food-card__label">点赞月榜</h3>
+              </article>
+              <article class="sy-food-card">
+                <div class="sy-food-card__img">
+                  <img src="images/food3.jpg" alt="高赞评论" width="400" height="288" loading="lazy" decoding="async" />
+                </div>
+                <h3 class="sy-food-card__label">高赞评论</h3>
+              </article>
+              <article class="sy-food-card">
+                <div class="sy-food-card__img">
+                  <img src="images/food4.jpg" alt="挑战榜" width="400" height="288" loading="lazy" decoding="async" />
+                </div>
+                <h3 class="sy-food-card__label">挑战榜</h3>
+              </article>
+            </div>
+          </section>
+
+          <!-- 下方可滚动扩展区（占位内容） -->
+          <section class="sy-feed" aria-label="为你推荐">
+            <div class="sy-feed__head">
+              <h2 class="sy-feed__title">为你推荐</h2>
+              <span class="sy-feed__hint">轻食 · 低卡 · 易上手</span>
+            </div>
+
+            <article class="sy-recipe-card">
+              <div class="sy-recipe-card__thumb">
+                <img src="images/food5.jpg" alt="清爽牛油果碗" width="200" height="200" loading="lazy" decoding="async" />
+              </div>
+              <div class="sy-recipe-card__body">
+                <h3 class="sy-recipe-card__name">清爽牛油果碗</h3>
+                <p class="sy-recipe-card__meta">320 kcal · 15 分钟 · 4.9 分</p>
+                <p class="sy-recipe-card__tags">
+                  <span>高蛋白</span><span>减脂</span>
+                </p>
+              </div>
+            </article>
+
+            <article class="sy-recipe-card">
+              <div class="sy-recipe-card__thumb">
+                <img src="images/food6.jpg" alt="番茄豆腐暖汤" width="200" height="200" loading="lazy" decoding="async" />
+              </div>
+              <div class="sy-recipe-card__body">
+                <h3 class="sy-recipe-card__name">番茄豆腐暖汤</h3>
+                <p class="sy-recipe-card__meta">210 kcal · 20 分钟 · 4.8 分</p>
+                <p class="sy-recipe-card__tags">
+                  <span>暖胃</span><span>素食</span>
+                </p>
+              </div>
+            </article>
+
+            <article class="sy-recipe-card">
+              <div class="sy-recipe-card__thumb">
+                <img src="images/food7.jpg" alt="藜麦鸡胸便当" width="200" height="200" loading="lazy" decoding="async" />
+              </div>
+              <div class="sy-recipe-card__body">
+                <h3 class="sy-recipe-card__name">藜麦鸡胸便当</h3>
+                <p class="sy-recipe-card__meta">410 kcal · 25 分钟 · 4.7 分</p>
+                <p class="sy-recipe-card__tags">
+                  <span>便当</span><span>健身餐</span>
+                </p>
+              </div>
+            </article>
+
+            <article class="sy-prompt">
+              <p class="sy-prompt__text">更多内容正在筹备中，敬请期待 ✨</p>
+            </article>
+          </section>
+        </div>
+
+        <nav class="mk-tabbar" id="mk-tabbar" aria-label="主导航">
+          <div class="mk-tabbar__glass">
+            <div class="mk-tabbar__inner" id="mk-tab-rail">
+              <div class="mk-tabbar__pill" id="mk-tab-pill" aria-hidden="true"></div>
+              <div class="mk-tabbar__tabs">
+                <button type="button" class="mk-tab mk-tab--active" data-tab="0" aria-selected="true">
+                  <span class="mk-tab__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.35">
+                      <path d="M4 10.5L12 4l8 6.5V20a1 1 0 01-1 1h-5v-7H10v7H5a1 1 0 01-1-1v-9.5z" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                  <span class="mk-tab__label">首页</span>
+                </button>
+                <button type="button" class="mk-tab" data-tab="1" aria-selected="false">
+                  <span class="mk-tab__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.35">
+                      <rect x="4" y="4" width="7" height="7" rx="1.5" />
+                      <rect x="13" y="4" width="7" height="7" rx="1.5" />
+                      <rect x="4" y="13" width="7" height="7" rx="1.5" />
+                      <rect x="13" y="13" width="7" height="7" rx="1.5" />
+                    </svg>
+                  </span>
+                  <span class="mk-tab__label">广场</span>
+                </button>
+                <button type="button" class="mk-fab" id="mk-fab-camera" aria-label="发布">
+                  <svg viewBox="0 0 24 24" width="27" height="27" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <path d="M4 9h3l1.5-2h7L17 9h3a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2v-8a2 2 0 012-2z" stroke-linejoin="round" />
+                    <circle cx="12" cy="14" r="3.2" />
+                  </svg>
+                </button>
+                <button type="button" class="mk-tab" data-tab="2" aria-selected="false">
+                  <span class="mk-tab__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.35">
+                      <path d="M5 6.5h14a1 1 0 011 1v10l-4-2.5-3 2.5-3-2.5-4 2.5V7.5a1 1 0 011-1z" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                  <span class="mk-tab__label">消息</span>
+                </button>
+                <button type="button" class="mk-tab" data-tab="3" aria-selected="false">
+                  <span class="mk-tab__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.35">
+                      <circle cx="12" cy="9" r="3.5" />
+                      <path d="M6.5 20.5v-.5a4 4 0 014-4h3a4 4 0 014 4v.5" stroke-linecap="round" />
+                    </svg>
+                  </span>
+                  <span class="mk-tab__label">我</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <script src="meraki-tabbar.js" defer></script>
+    <script src="shouye.js" defer></script>
+  </body>
+</html>

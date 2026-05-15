@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>消息 · 精肴 MERAKI</title>
+    <link rel="stylesheet" href="xiaoxi.css" />
+    <link rel="stylesheet" href="meraki-tabbar.css" />
+  </head>
+  <body data-active-tab="2">
+    <div class="device xx-device" role="presentation">
+      <div class="xx-app">
+        <div class="xx-scroll" id="xx-scroll">
+          <header class="xx-top">
+            <p class="xx-brand">精肴<span class="xx-brand-en">MERAKI</span></p>
+            <button type="button" class="xx-scan" id="xx-scan" aria-label="扫一扫">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                <path d="M5 5h4v4H5V5zm10 0h4v4h-4V5zM5 15h4v4H5v-4zm10 0h4v4h-4v-4z" stroke-linejoin="round" />
+                <path d="M9 12h6" stroke-linecap="round" />
+              </svg>
+            </button>
+          </header>
+
+          <div class="xx-tabs" role="tablist" aria-label="消息分类">
+            <button
+              type="button"
+              class="xx-tabs__item xx-tabs__item--active"
+              role="tab"
+              id="xx-tab-dm"
+              aria-selected="true"
+              aria-controls="xx-panel-dm"
+              data-xx-tab="dm"
+            >
+              私信通知
+            </button>
+            <button
+              type="button"
+              class="xx-tabs__item"
+              role="tab"
+              id="xx-tab-sys"
+              aria-selected="false"
+              aria-controls="xx-panel-sys"
+              data-xx-tab="sys"
+            >
+              消息通知
+            </button>
+          </div>
+
+          <div class="xx-panels">
+            <ul class="xx-list" id="xx-panel-dm" role="tabpanel" aria-labelledby="xx-tab-dm">
+              <li class="xx-chat xx-chat--pinned xx-chat--link" id="xx-chat-jxt" data-href="jxt.html">
+                <div class="xx-chat__avatar">
+                  <img src="images/tx1.png" alt="" width="96" height="96" loading="lazy" decoding="async" />
+                  <span class="xx-chat__online" aria-hidden="true"></span>
+                </div>
+                <div class="xx-chat__body">
+                  <div class="xx-chat__row">
+                    <span class="xx-chat__name">今天还活着</span>
+                    <span class="xx-chat__pin" title="置顶" aria-label="置顶">
+                      <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" aria-hidden="true">
+                        <path d="M14 3h2v5.5l3.2 3.2-1.4 1.4L12 10.3 6.2 13.1 4.8 11.7 8 8.5V3h2v4.3l2-2 2 2V3zM11 14.5h2V22h-2v-7.5z" />
+                      </svg>
+                    </span>
+                    <span class="xx-chat__badge">3</span>
+                    <time class="xx-chat__time" datetime="2026-05-14T21:06">昨天</time>
+                  </div>
+                  <p class="xx-chat__preview">
+                    <svg class="xx-chat__reply" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+                      <path d="M9 11l-4 3V6a2 2 0 012-2h8a2 2 0 012 2v2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    这个看上去还蛮简单的诶 下次试试
+                  </p>
+                </div>
+              </li>
+
+              <li class="xx-chat xx-chat--link" id="xx-chat-tikli" data-href="duihua.html">
+                <div class="xx-chat__avatar">
+                  <img src="images/tx2.png" alt="" width="96" height="96" loading="lazy" decoding="async" />
+                  <span class="xx-chat__online" aria-hidden="true"></span>
+                </div>
+                <div class="xx-chat__body">
+                  <div class="xx-chat__row">
+                    <span class="xx-chat__name">TiKLi</span>
+                    <time class="xx-chat__time" datetime="2026-05-15T12:12">刚刚</time>
+                  </div>
+                  <p class="xx-chat__preview">我选好了转发给你！！下午等你哦！不见不散！！</p>
+                </div>
+              </li>
+
+              <li class="xx-chat">
+                <div class="xx-chat__avatar">
+                  <img src="images/tx3.png" alt="" width="96" height="96" loading="lazy" decoding="async" />
+                  <span class="xx-chat__online" aria-hidden="true"></span>
+                </div>
+                <div class="xx-chat__body">
+                  <div class="xx-chat__row">
+                    <span class="xx-chat__name">Callie...</span>
+                    <span class="xx-chat__badge">2</span>
+                    <time class="xx-chat__time" datetime="2026-05-14T16:40">昨天</time>
+                  </div>
+                  <p class="xx-chat__preview">[分享链接]</p>
+                </div>
+              </li>
+
+              <li class="xx-chat">
+                <div class="xx-chat__avatar">
+                  <img src="images/tx4.png" alt="" width="96" height="96" loading="lazy" decoding="async" />
+                  <span class="xx-chat__online" aria-hidden="true"></span>
+                </div>
+                <div class="xx-chat__body">
+                  <div class="xx-chat__row">
+                    <span class="xx-chat__name">266</span>
+                    <time class="xx-chat__time" datetime="2026-05-13T19:20">2 天前</time>
+                  </div>
+                  <p class="xx-chat__preview">
+                    <svg class="xx-chat__reply" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+                      <path d="M9 11l-4 3V6a2 2 0 012-2h8a2 2 0 012 2v2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    笑死我了
+                  </p>
+                </div>
+              </li>
+
+              <li class="xx-chat">
+                <div class="xx-chat__avatar">
+                  <img src="images/tx5.png" alt="" width="96" height="96" loading="lazy" decoding="async" />
+                  <span class="xx-chat__online" aria-hidden="true"></span>
+                </div>
+                <div class="xx-chat__body">
+                  <div class="xx-chat__row">
+                    <span class="xx-chat__name">小语如意</span>
+                    <time class="xx-chat__time" datetime="2026-05-12">05/12</time>
+                  </div>
+                  <p class="xx-chat__preview">
+                    <svg class="xx-chat__reply" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+                      <path d="M9 11l-4 3V6a2 2 0 012-2h8a2 2 0 012 2v2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    [动画表情]
+                  </p>
+                </div>
+              </li>
+
+              <li class="xx-chat">
+                <div class="xx-chat__avatar">
+                  <img src="images/tx6.png" alt="" width="96" height="96" loading="lazy" decoding="async" />
+                  <span class="xx-chat__online" aria-hidden="true"></span>
+                </div>
+                <div class="xx-chat__body">
+                  <div class="xx-chat__row">
+                    <span class="xx-chat__name">吃一口</span>
+                    <time class="xx-chat__time" datetime="2026-05-08">05/08</time>
+                  </div>
+                  <p class="xx-chat__preview">下次试试这个！！</p>
+                </div>
+              </li>
+
+              <li class="xx-chat">
+                <div class="xx-chat__avatar">
+                  <img src="images/tx7.png" alt="" width="96" height="96" loading="lazy" decoding="async" />
+                  <span class="xx-chat__online" aria-hidden="true"></span>
+                </div>
+                <div class="xx-chat__body">
+                  <div class="xx-chat__row">
+                    <span class="xx-chat__name">帕帕爱种地</span>
+                    <time class="xx-chat__time" datetime="2026-05-05">05/05</time>
+                  </div>
+                  <p class="xx-chat__preview">
+                    <svg class="xx-chat__reply" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+                      <path d="M9 11l-4 3V6a2 2 0 012-2h8a2 2 0 012 2v2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    [分享链接]
+                  </p>
+                </div>
+              </li>
+            </ul>
+
+            <ul class="xx-list xx-list--hidden" id="xx-panel-sys" role="tabpanel" aria-labelledby="xx-tab-sys" hidden>
+              <li class="xx-empty">
+                <p>暂无系统通知</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <nav class="mk-tabbar" id="mk-tabbar" aria-label="主导航">
+          <div class="mk-tabbar__glass">
+            <div class="mk-tabbar__inner" id="mk-tab-rail">
+              <div class="mk-tabbar__pill" id="mk-tab-pill" aria-hidden="true"></div>
+              <div class="mk-tabbar__tabs">
+                <button type="button" class="mk-tab" data-tab="0" aria-selected="false">
+                  <span class="mk-tab__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.35">
+                      <path d="M4 10.5L12 4l8 6.5V20a1 1 0 01-1 1h-5v-7H10v7H5a1 1 0 01-1-1v-9.5z" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                  <span class="mk-tab__label">首页</span>
+                </button>
+                <button type="button" class="mk-tab" data-tab="1" aria-selected="false">
+                  <span class="mk-tab__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.35">
+                      <rect x="4" y="4" width="7" height="7" rx="1.5" />
+                      <rect x="13" y="4" width="7" height="7" rx="1.5" />
+                      <rect x="4" y="13" width="7" height="7" rx="1.5" />
+                      <rect x="13" y="13" width="7" height="7" rx="1.5" />
+                    </svg>
+                  </span>
+                  <span class="mk-tab__label">广场</span>
+                </button>
+                <button type="button" class="mk-fab" id="mk-fab-camera" aria-label="发布">
+                  <svg viewBox="0 0 24 24" width="27" height="27" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <path d="M4 9h3l1.5-2h7L17 9h3a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2v-8a2 2 0 012-2z" stroke-linejoin="round" />
+                    <circle cx="12" cy="14" r="3.2" />
+                  </svg>
+                </button>
+                <button type="button" class="mk-tab mk-tab--active" data-tab="2" aria-selected="true">
+                  <span class="mk-tab__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.35">
+                      <path d="M5 6.5h14a1 1 0 011 1v10l-4-2.5-3 2.5-3-2.5-4 2.5V7.5a1 1 0 011-1z" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                  <span class="mk-tab__label">消息</span>
+                </button>
+                <button type="button" class="mk-tab" data-tab="3" aria-selected="false">
+                  <span class="mk-tab__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.35">
+                      <circle cx="12" cy="9" r="3.5" />
+                      <path d="M6.5 20.5v-.5a4 4 0 014-4h3a4 4 0 014 4v.5" stroke-linecap="round" />
+                    </svg>
+                  </span>
+                  <span class="mk-tab__label">我</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <script src="meraki-tabbar.js" defer></script>
+    <script src="xiaoxi.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,287 @@
+/* 精肴 MERAKI — 注册页（430×932，iOS 极简） */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: #f0f0f2;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue",
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.device {
+  --canvas-w: 430px;
+  --canvas-h: 932px;
+  --green: #2f6f52;
+  --green-press: #265a44;
+  --green-light: #5cb88a;
+  --ph: #9aaf9d;
+  --agree: #8aab9a;
+  --agree-link: #6d8f7e;
+
+  width: var(--canvas-w);
+  height: var(--canvas-h);
+  margin: 0 auto;
+  background: #ffffff;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  background: #ffffff;
+  padding: clamp(1.75rem, 5.5vmin, 2.75rem) clamp(1.25rem, 5vw, 2rem)
+    calc(1rem + env(safe-area-inset-bottom, 0px));
+  transform: translateY(-1.25rem);
+}
+
+/* 品牌 + 表单 + 底链：同一列宽、整体水平居中 */
+.zhuce-shell {
+  width: min(calc(var(--canvas-w) * 0.82), 100%);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  align-items: stretch;
+}
+
+.zhuce-brand {
+  flex: 0 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: clamp(1.25rem, 3.5vmin, 2rem);
+}
+
+.zhuce-brand__row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  /* 在原间距基础上再靠近 10px */
+  gap: max(4px, calc(clamp(0.65rem, 2.5vw, 1.1rem) - 10px));
+}
+
+.zhuce-brand__logo1 {
+  width: min(38vw, 148px);
+  display: block;
+  height: auto;
+  opacity: 0;
+  /* 在原先 ±20px 基础上加宽 15px，translateX 减 7.5px 保持几何中心不变 */
+  transform: translate(12.5px, 10px);
+}
+
+.zhuce-brand__logo2 {
+  width: min(40vw, 163px);
+  display: block;
+  height: auto;
+  opacity: 0;
+  transform: translate(-27.5px, 10px);
+}
+
+.zhuce-brand--in .zhuce-brand__logo1 {
+  animation: zhuceBrandIn1 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.zhuce-brand--in .zhuce-brand__logo2 {
+  animation: zhuceBrandIn2 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes zhuceBrandIn1 {
+  to {
+    opacity: 1;
+    transform: translate(12.5px, 0);
+  }
+}
+
+@keyframes zhuceBrandIn2 {
+  to {
+    opacity: 1;
+    transform: translate(-27.5px, 0);
+  }
+}
+
+.zhuce-main {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 0;
+}
+
+.zhuce-form {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.9rem, 2.8vmin, 1.15rem);
+  width: 100%;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.zhuce-input {
+  width: 100%;
+  padding: 0.95rem 1.1rem;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #1f1f1f;
+  background: #f3f5f3;
+  border: none;
+  border-radius: 0.95rem;
+  outline: none;
+  transition: background 0.22s ease, box-shadow 0.22s ease;
+}
+
+.zhuce-input::placeholder {
+  color: var(--ph);
+  font-weight: 300;
+}
+
+.zhuce-input:focus {
+  background: #f8faf8;
+  box-shadow: 0 0 0 1px rgba(47, 111, 82, 0.1), 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+/* 主按钮见 meraki-buttons.css */
+.zhuce-form .meraki-btn {
+  margin-top: clamp(0.35rem, 1.5vmin, 0.65rem);
+}
+
+.zhuce-agree {
+  margin-top: clamp(0.65rem, 2vmin, 1rem);
+}
+
+.zhuce-agree__native {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.zhuce-agree__label {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.zhuce-agree__box {
+  flex-shrink: 0;
+  width: 1.05rem;
+  height: 1.05rem;
+  margin-top: 0.12rem;
+  border-radius: 0.28rem;
+  border: 1.5px solid rgba(138, 171, 154, 0.65);
+  background: #fafcfb;
+  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+}
+
+.zhuce-agree__native:focus-visible + .zhuce-agree__label .zhuce-agree__box {
+  box-shadow: 0 0 0 3px rgba(47, 111, 82, 0.18);
+}
+
+.zhuce-agree__native:checked + .zhuce-agree__label .zhuce-agree__box {
+  background: var(--green);
+  border-color: var(--green);
+}
+
+.zhuce-agree__native:checked + .zhuce-agree__label .zhuce-agree__box::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  width: 0.28rem;
+  height: 0.48rem;
+  margin: -0.2rem 0 0 -0.12rem;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(38deg);
+}
+
+.zhuce-agree__text {
+  font-size: 0.75rem;
+  font-weight: 300;
+  line-height: 1.55;
+  color: var(--agree);
+}
+
+.zhuce-agree__link {
+  color: var(--agree-link);
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.2s ease;
+}
+
+.zhuce-agree__link:active {
+  color: #5a7a6a;
+}
+
+@media (hover: hover) {
+  .zhuce-agree__link:hover {
+    color: #5a7a6a;
+  }
+}
+
+.zhuce-foot {
+  margin: 0;
+  margin-top: auto;
+  padding-top: clamp(1.75rem, 5vmin, 2.75rem);
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 300;
+}
+
+.zhuce-foot__muted {
+  color: #8e968e;
+}
+
+.zhuce-foot__login {
+  margin-left: 0.15em;
+  color: var(--green);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.zhuce-foot__login:active {
+  color: var(--green-press);
+  opacity: 0.9;
+}
+
+@media (hover: hover) {
+  .zhuce-foot__login:hover {
+    color: var(--green-press);
+  }
+}

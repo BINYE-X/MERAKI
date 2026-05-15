@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>我的 · 精肴 MERAKI</title>
+    <link rel="stylesheet" href="me.css" />
+    <link rel="stylesheet" href="meraki-tabbar.css" />
+  </head>
+  <body data-active-tab="3">
+    <div class="device me-device" role="presentation">
+      <div class="me-app">
+        <div class="me-scroll" id="me-scroll">
+          <header class="me-topbar" id="me-topbar" aria-label="页面标题">
+            <span class="me-topbar__brand">精肴<span class="me-topbar__brand-en">MERAKI</span></span>
+            <button type="button" class="me-topbar__bell" id="me-bell" aria-label="通知">
+              <svg
+                class="me-topbar__bell-svg"
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.85"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
+                <path d="M13.73 21a2 2 0 01-3.46 0" />
+              </svg>
+              <span class="me-topbar__badge" aria-hidden="true"><span class="me-topbar__badge-num">3</span></span>
+            </button>
+          </header>
+
+          <div class="me-hero" id="me-hero">
+            <div class="me-hero__decor" aria-hidden="true">
+              <span class="me-hero__orb me-hero__orb--1"></span>
+              <span class="me-hero__orb me-hero__orb--2"></span>
+              <span class="me-hero__orb me-hero__orb--3"></span>
+            </div>
+
+            <header class="me-profile" id="me-profile" aria-label="个人信息">
+              <button type="button" class="me-avatar" id="me-avatar" aria-label="更换头像">
+                <img class="me-avatar__img" src="images/touxiang.jpg" alt="牡蛎的头像" width="88" height="88" />
+                <span class="me-avatar__ring" aria-hidden="true"></span>
+              </button>
+              <div class="me-profile__text">
+                <div class="me-profile__name-row">
+                  <h1 class="me-nickname">牡蛎</h1>
+                  <span class="me-badge">Lv.3</span>
+                </div>
+                <p class="me-bio">ID 928416 · 好好吃饭，慢慢生活</p>
+                <button type="button" class="me-edit-pill" id="me-edit">编辑资料</button>
+              </div>
+              <button type="button" class="me-profile__more" aria-label="更多">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </header>
+
+            <div class="me-stats" data-me-block>
+              <div class="me-stat">
+                <span class="me-stat__num">128</span>
+                <span class="me-stat__label">收藏</span>
+              </div>
+              <span class="me-stats__sep" aria-hidden="true"></span>
+              <div class="me-stat">
+                <span class="me-stat__num">56</span>
+                <span class="me-stat__label">关注</span>
+              </div>
+              <span class="me-stats__sep" aria-hidden="true"></span>
+              <div class="me-stat">
+                <span class="me-stat__num">892</span>
+                <span class="me-stat__label">粉丝</span>
+              </div>
+            </div>
+          </div>
+
+          <section class="me-sheet" id="me-sheet" aria-label="个人中心内容">
+            <div class="me-quick me-card me-card--flat" data-me-block>
+              <button type="button" class="me-quick__item" data-me-quick>
+                <span class="me-quick__icon me-quick__icon--recipe" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.45">
+                    <path d="M6 4h12v16H6z" stroke-linejoin="round" />
+                    <path d="M9 8h6M9 12h6M9 16h4" stroke-linecap="round" />
+                  </svg>
+                </span>
+                <span class="me-quick__label">我的食谱</span>
+              </button>
+              <button type="button" class="me-quick__item" data-me-quick>
+                <span class="me-quick__icon me-quick__icon--check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.45">
+                    <path d="M9 11l2 2 4-4" stroke-linecap="round" stroke-linejoin="round" />
+                    <circle cx="12" cy="12" r="9" />
+                  </svg>
+                </span>
+                <span class="me-quick__label">今日打卡</span>
+              </button>
+              <button type="button" class="me-quick__item" data-me-quick>
+                <span class="me-quick__icon me-quick__icon--chart" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.45">
+                    <path d="M6 18V10M12 18V6M18 18v-4" stroke-linecap="round" />
+                  </svg>
+                </span>
+                <span class="me-quick__label">健康数据</span>
+              </button>
+              <button type="button" class="me-quick__item" data-me-quick>
+                <span class="me-quick__icon me-quick__icon--star" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.45">
+                    <path d="M12 3l2.4 5.8 6.3.5-4.8 4.1 1.5 6.2L12 16.8 6.6 19.6l1.5-6.2-4.8-4.1 6.3-.5L12 3z" stroke-linejoin="round" />
+                  </svg>
+                </span>
+                <span class="me-quick__label">成就勋章</span>
+              </button>
+            </div>
+
+            <article class="me-wellness me-card" data-me-block>
+              <div class="me-wellness__head">
+                <div>
+                  <h2 class="me-wellness__title">今日健康</h2>
+                  <p class="me-wellness__sub">已连续打卡 <strong>12</strong> 天</p>
+                </div>
+                <span class="me-wellness__tag">进行中</span>
+              </div>
+              <div class="me-wellness__body">
+                <div class="me-ring" aria-hidden="true">
+                  <svg class="me-ring__svg" viewBox="0 0 72 72">
+                    <circle class="me-ring__track" cx="36" cy="36" r="30" />
+                    <circle class="me-ring__fill" cx="36" cy="36" r="30" />
+                  </svg>
+                  <span class="me-ring__text"><em>72</em>%</span>
+                </div>
+                <ul class="me-metrics">
+                  <li class="me-metric">
+                    <span class="me-metric__icon" aria-hidden="true">🔥</span>
+                    <span class="me-metric__info">
+                      <span class="me-metric__val">1,420 <small>kcal</small></span>
+                      <span class="me-metric__name">摄入热量</span>
+                    </span>
+                  </li>
+                  <li class="me-metric">
+                    <span class="me-metric__icon" aria-hidden="true">💧</span>
+                    <span class="me-metric__info">
+                      <span class="me-metric__val">1.6 <small>L</small></span>
+                      <span class="me-metric__name">饮水</span>
+                    </span>
+                  </li>
+                  <li class="me-metric">
+                    <span class="me-metric__icon" aria-hidden="true">🥗</span>
+                    <span class="me-metric__info">
+                      <span class="me-metric__val">3 <small>餐</small></span>
+                      <span class="me-metric__name">记录餐食</span>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <button type="button" class="me-banner" data-me-block id="me-banner">
+              <span class="me-banner__icon" aria-hidden="true">✨</span>
+              <span class="me-banner__text">
+                <span class="me-banner__title">今日小贴士</span>
+                <span class="me-banner__desc">晚餐少油少盐，搭配一份温蔬菜汤</span>
+              </span>
+              <span class="me-banner__arrow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+            </button>
+
+            <h2 class="me-section-title" data-me-block>账户与服务</h2>
+            <div class="me-card" data-me-card data-me-block>
+              <button type="button" class="me-row" data-me-row>
+                <span class="me-row__icon-wrap me-row__icon-wrap--wallet" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="4" y="6" width="16" height="13" rx="2" />
+                    <path d="M8 6V5a2 2 0 012-2h4a2 2 0 012 2v1" stroke-linecap="round" />
+                  </svg>
+                </span>
+                <span class="me-row__body">
+                  <span class="me-row__title">我的钱包</span>
+                  <span class="me-row__desc">余额与优惠券</span>
+                </span>
+                <span class="me-row__chev" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </button>
+              <button type="button" class="me-row" data-me-row>
+                <span class="me-row__icon-wrap me-row__icon-wrap--bell" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M18 8a3 3 0 10-6 0c0 4-3 7-3 7h12s-3-3-3-7" stroke-linejoin="round" />
+                    <path d="M13.73 21a2 2 0 01-3.46 0" stroke-linecap="round" />
+                  </svg>
+                </span>
+                <span class="me-row__body">
+                  <span class="me-row__title">消息提醒</span>
+                  <span class="me-row__desc">系统与互动通知</span>
+                </span>
+                <span class="me-row__pill">3 条未读</span>
+                <span class="me-row__chev" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </button>
+              <button type="button" class="me-row" data-me-row>
+                <span class="me-row__icon-wrap me-row__icon-wrap--heart" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 21s-6.5-4.35-6.5-10a4.5 4.5 0 019 0c0 5.65-6.5 10-6.5 10z" stroke-linejoin="round" />
+                  </svg>
+                </span>
+                <span class="me-row__body">
+                  <span class="me-row__title">我的点赞</span>
+                  <span class="me-row__desc">收藏的菜谱与笔记</span>
+                </span>
+                <span class="me-row__chev" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+            <h2 class="me-section-title" data-me-block>设置与帮助</h2>
+            <div class="me-card" data-me-card data-me-block>
+              <button type="button" class="me-row" data-me-row>
+                <span class="me-row__icon-wrap me-row__icon-wrap--muted" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="3" />
+                    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke-linecap="round" />
+                  </svg>
+                </span>
+                <span class="me-row__body">
+                  <span class="me-row__title">设置</span>
+                  <span class="me-row__desc">账号、隐私与通知</span>
+                </span>
+                <span class="me-row__chev" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </button>
+              <button type="button" class="me-row" data-me-row>
+                <span class="me-row__icon-wrap me-row__icon-wrap--muted" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="5" y="5" width="5" height="5" rx="1" />
+                    <rect x="14" y="5" width="5" height="5" rx="1" />
+                    <rect x="5" y="14" width="5" height="5" rx="1" />
+                    <rect x="14" y="14" width="5" height="5" rx="1" />
+                  </svg>
+                </span>
+                <span class="me-row__body">
+                  <span class="me-row__title">我的二维码</span>
+                  <span class="me-row__desc">分享给好友</span>
+                </span>
+                <span class="me-row__chev" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </button>
+              <button type="button" class="me-row" data-me-row>
+                <span class="me-row__icon-wrap me-row__icon-wrap--muted" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="12" cy="12" r="8" />
+                    <circle cx="12" cy="12" r="3" />
+                    <path d="M12 2v2M12 20v2" stroke-linecap="round" />
+                  </svg>
+                </span>
+                <span class="me-row__body">
+                  <span class="me-row__title">帮助</span>
+                  <span class="me-row__desc">常见问题与反馈</span>
+                </span>
+                <span class="me-row__chev" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
+              </button>
+            </div>
+          </section>
+        </div>
+
+        <nav class="mk-tabbar" id="mk-tabbar" aria-label="主导航">
+          <div class="mk-tabbar__glass">
+            <div class="mk-tabbar__inner" id="mk-tab-rail">
+              <div class="mk-tabbar__pill" id="mk-tab-pill" aria-hidden="true"></div>
+              <div class="mk-tabbar__tabs">
+                <button type="button" class="mk-tab" data-tab="0" aria-selected="false">
+                  <span class="mk-tab__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.35">
+                      <path d="M4 10.5L12 4l8 6.5V20a1 1 0 01-1 1h-5v-7H10v7H5a1 1 0 01-1-1v-9.5z" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                  <span class="mk-tab__label">首页</span>
+                </button>
+                <button type="button" class="mk-tab" data-tab="1" aria-selected="false">
+                  <span class="mk-tab__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.35">
+                      <rect x="4" y="4" width="7" height="7" rx="1.5" />
+                      <rect x="13" y="4" width="7" height="7" rx="1.5" />
+                      <rect x="4" y="13" width="7" height="7" rx="1.5" />
+                      <rect x="13" y="13" width="7" height="7" rx="1.5" />
+                    </svg>
+                  </span>
+                  <span class="mk-tab__label">广场</span>
+                </button>
+                <button type="button" class="mk-fab" id="mk-fab-camera" aria-label="发布">
+                  <svg viewBox="0 0 24 24" width="27" height="27" fill="none" stroke="currentColor" stroke-width="1.6">
+                    <path d="M4 9h3l1.5-2h7L17 9h3a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2v-8a2 2 0 012-2z" stroke-linejoin="round" />
+                    <circle cx="12" cy="14" r="3.2" />
+                  </svg>
+                </button>
+                <button type="button" class="mk-tab" data-tab="2" aria-selected="false">
+                  <span class="mk-tab__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.35">
+                      <path d="M5 6.5h14a1 1 0 011 1v10l-4-2.5-3 2.5-3-2.5-4 2.5V7.5a1 1 0 011-1z" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                  <span class="mk-tab__label">消息</span>
+                </button>
+                <button type="button" class="mk-tab mk-tab--active" data-tab="3" aria-selected="true">
+                  <span class="mk-tab__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.35">
+                      <circle cx="12" cy="9" r="3.5" />
+                      <path d="M6.5 20.5v-.5a4 4 0 014-4h3a4 4 0 014 4v.5" stroke-linecap="round" />
+                    </svg>
+                  </span>
+                  <span class="mk-tab__label">我</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <script src="meraki-tabbar.js" defer></script>
+    <script src="me.js" defer></script>
+  </body>
+</html>

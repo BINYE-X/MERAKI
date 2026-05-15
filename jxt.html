@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>今天还活着 · 精肴 MERAKI</title>
+    <link rel="stylesheet" href="jxt.css" />
+  </head>
+  <body>
+    <div class="device jxt-device" role="presentation">
+      <div class="jxt-app">
+        <header class="jxt-header">
+          <button type="button" class="jxt-back" id="jxt-back" aria-label="返回消息">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M14 6l-6 6 6 6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+          <div class="jxt-peer">
+            <img class="jxt-peer__avatar" src="images/tx1.png" alt="今天还活着" width="88" height="88" decoding="async" />
+            <div class="jxt-peer__info">
+              <h1 class="jxt-peer__name">今天还活着</h1>
+              <p class="jxt-peer__status">昨天 21:00 在线</p>
+            </div>
+          </div>
+          <button type="button" class="jxt-call" id="jxt-call" aria-label="语音通话">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+          </button>
+        </header>
+
+        <div class="jxt-chat" id="jxt-chat">
+          <p class="jxt-date" role="separator"><time datetime="2026-05-14">昨天 20:30</time></p>
+
+          <div class="jxt-msg jxt-msg--in">
+            <img class="jxt-msg__avatar" src="images/tx1.png" alt="" width="64" height="64" decoding="async" />
+            <p class="jxt-bubble jxt-bubble--in">最近在精肴刷到几个食谱，发你看看！</p>
+            <time class="jxt-msg__time" datetime="2026-05-14T20:32">20:32</time>
+          </div>
+
+          <div class="jxt-msg jxt-msg--in">
+            <img class="jxt-msg__avatar" src="images/tx1.png" alt="" width="64" height="64" decoding="async" />
+            <a class="jxt-share" href="shouye.html" aria-label="打开分享：清爽牛油果碗">
+              <span class="jxt-share__thumb">
+                <img src="images/food5.jpg" alt="" width="120" height="90" loading="lazy" decoding="async" />
+              </span>
+              <span class="jxt-share__body">
+                <span class="jxt-share__tag">精肴 · 食谱分享</span>
+                <span class="jxt-share__title">清爽牛油果碗</span>
+                <span class="jxt-share__meta">320 kcal · 15 分钟 · 高蛋白减脂</span>
+              </span>
+            </a>
+            <time class="jxt-msg__time" datetime="2026-05-14T20:33">20:33</time>
+          </div>
+
+          <div class="jxt-msg jxt-msg--out">
+            <time class="jxt-msg__time" datetime="2026-05-14T20:45">20:45</time>
+            <p class="jxt-bubble jxt-bubble--out">哇这个配色好好看，是轻食那种吗？</p>
+          </div>
+
+          <div class="jxt-msg jxt-msg--in">
+            <img class="jxt-msg__avatar" src="images/tx1.png" alt="" width="64" height="64" decoding="async" />
+            <p class="jxt-bubble jxt-bubble--in">对呀～还有一个汤品我也觉得不错</p>
+            <time class="jxt-msg__time" datetime="2026-05-14T20:48">20:48</time>
+          </div>
+
+          <div class="jxt-msg jxt-msg--in">
+            <img class="jxt-msg__avatar" src="images/tx1.png" alt="" width="64" height="64" decoding="async" />
+            <a class="jxt-share" href="shouye.html" aria-label="打开分享：番茄豆腐暖汤">
+              <span class="jxt-share__thumb">
+                <img src="images/food6.jpg" alt="" width="120" height="90" loading="lazy" decoding="async" />
+              </span>
+              <span class="jxt-share__body">
+                <span class="jxt-share__tag">精肴 · 食谱分享</span>
+                <span class="jxt-share__title">番茄豆腐暖汤</span>
+                <span class="jxt-share__meta">210 kcal · 20 分钟 · 暖胃素食</span>
+              </span>
+            </a>
+            <time class="jxt-msg__time" datetime="2026-05-14T20:49">20:49</time>
+          </div>
+
+          <div class="jxt-msg jxt-msg--in">
+            <img class="jxt-msg__avatar" src="images/tx1.png" alt="" width="64" height="64" decoding="async" />
+            <p class="jxt-bubble jxt-bubble--in">第二个材料更少，很适合工作日晚上</p>
+            <time class="jxt-msg__time" datetime="2026-05-14T20:50">20:50</time>
+          </div>
+
+          <div class="jxt-msg jxt-msg--out">
+            <time class="jxt-msg__time" datetime="2026-05-14T21:06">21:06</time>
+            <p class="jxt-bubble jxt-bubble--out">这个看上去还蛮简单的诶 下次试试</p>
+          </div>
+        </div>
+
+        <footer class="jxt-composer">
+          <button type="button" class="jxt-composer__tool" id="jxt-voice" aria-label="语音">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z" />
+              <path d="M19 10v1a7 7 0 0 1-14 0v-1" />
+              <path d="M12 18v3" />
+              <path d="M8 21h8" />
+            </svg>
+          </button>
+          <div class="jxt-composer__field">
+            <label class="sr-only" for="jxt-input">输入消息</label>
+            <input
+              class="jxt-composer__input"
+              type="text"
+              id="jxt-input"
+              placeholder="在此处输入..."
+              autocomplete="off"
+            />
+            <button type="button" class="jxt-composer__send" id="jxt-send" aria-label="发送">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path d="M4 12l16-7-7 16-2-7-7-2z" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+          <button type="button" class="jxt-composer__tool" id="jxt-emoji" aria-label="表情">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <circle cx="12" cy="12" r="8.5" />
+              <path d="M9 10h.01M15 10h.01" stroke-linecap="round" stroke-width="2.2" />
+              <path d="M9.5 14.5a4 4 0 005 0" stroke-linecap="round" />
+            </svg>
+          </button>
+          <button type="button" class="jxt-composer__tool" id="jxt-more" aria-label="更多">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path d="M12 6v12M6 12h12" stroke-linecap="round" />
+            </svg>
+          </button>
+        </footer>
+      </div>
+    </div>
+
+    <script src="jxt.js" defer></script>
+  </body>
+</html>

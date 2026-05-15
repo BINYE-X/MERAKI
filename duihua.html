@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>TiKLi · 精肴 MERAKI</title>
+    <link rel="stylesheet" href="duihua.css" />
+  </head>
+  <body>
+    <div class="device dh-device" role="presentation">
+      <div class="dh-app">
+        <header class="dh-header">
+          <button type="button" class="dh-back" id="dh-back" aria-label="返回消息">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M14 6l-6 6 6 6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+          <div class="dh-peer">
+            <img class="dh-peer__avatar" src="images/tx2.png" alt="TiKLi" width="88" height="88" decoding="async" />
+            <div class="dh-peer__info">
+              <h1 class="dh-peer__name">TiKLi</h1>
+              <p class="dh-peer__status">今天 11:40 在线</p>
+              <p class="dh-peer__typing">正在输入中...</p>
+            </div>
+          </div>
+          <button type="button" class="dh-call" id="dh-call" aria-label="语音通话">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+          </button>
+        </header>
+
+        <div class="dh-chat" id="dh-chat">
+          <p class="dh-date" role="separator"><time datetime="2026-05-15">今天 11:30</time></p>
+
+          <div class="dh-msg dh-msg--out">
+            <time class="dh-msg__time" datetime="2026-05-15T11:30">11:30</time>
+            <p class="dh-bubble dh-bubble--out">今天有工作吗？忙不忙呀</p>
+          </div>
+
+          <div class="dh-msg dh-msg--in">
+            <img class="dh-msg__avatar" src="images/tx2.png" alt="" width="64" height="64" decoding="async" />
+            <p class="dh-bubble dh-bubble--in">还行诶今天，不是很忙。上午有工作 下午可以休息半天。</p>
+            <time class="dh-msg__time" datetime="2026-05-15T11:35">11:35</time>
+          </div>
+
+          <div class="dh-msg dh-msg--out">
+            <time class="dh-msg__time" datetime="2026-05-15T11:37">11:37</time>
+            <p class="dh-bubble dh-bubble--out">那很好诶！蛮不错</p>
+          </div>
+
+          <div class="dh-msg dh-msg--in">
+            <img class="dh-msg__avatar" src="images/tx2.png" alt="" width="64" height="64" decoding="async" />
+            <p class="dh-bubble dh-bubble--in">好啊好啊！！那我去看看哈哈！</p>
+            <time class="dh-msg__time" datetime="2026-05-15T11:40">11:40</time>
+          </div>
+
+          <div class="dh-msg dh-msg--out">
+            <time class="dh-msg__time" datetime="2026-05-15T11:41">11:41</time>
+            <p class="dh-bubble dh-bubble--out">那我今天晚饭去你家和你一起做吧！晚点我去超市买点菜！</p>
+          </div>
+
+          <div class="dh-msg dh-msg--out">
+            <time class="dh-msg__time" datetime="2026-05-15T11:42">11:42</time>
+            <p class="dh-bubble dh-bubble--out">你看看有没有想吃的，我们可以一起做！！好久没有自己做饭了</p>
+          </div>
+
+          <div class="dh-msg dh-msg--in">
+            <img class="dh-msg__avatar" src="images/tx2.png" alt="" width="64" height="64" decoding="async" />
+            <p class="dh-bubble dh-bubble--in">我选好了转发给你！！下午等你哦！不见不散！！</p>
+            <time class="dh-msg__time" datetime="2026-05-15T11:43">11:43</time>
+          </div>
+        </div>
+
+        <footer class="dh-composer">
+          <button type="button" class="dh-composer__tool" id="dh-voice" aria-label="语音">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z" />
+              <path d="M19 10v1a7 7 0 0 1-14 0v-1" />
+              <path d="M12 18v3" />
+              <path d="M8 21h8" />
+            </svg>
+          </button>
+          <div class="dh-composer__field">
+            <label class="sr-only" for="dh-input">输入消息</label>
+            <input
+              class="dh-composer__input"
+              type="text"
+              id="dh-input"
+              placeholder="在此处输入..."
+              autocomplete="off"
+            />
+            <button type="button" class="dh-composer__send" id="dh-send" aria-label="发送">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                <path d="M4 12l16-7-7 16-2-7-7-2z" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+          <button type="button" class="dh-composer__tool" id="dh-emoji" aria-label="表情">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+              <circle cx="12" cy="12" r="8.5" />
+              <path d="M9 10h.01M15 10h.01" stroke-linecap="round" stroke-width="2.2" />
+              <path d="M9.5 14.5a4 4 0 005 0" stroke-linecap="round" />
+            </svg>
+          </button>
+          <button type="button" class="dh-composer__tool" id="dh-more" aria-label="更多">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+              <path d="M12 6v12M6 12h12" stroke-linecap="round" />
+            </svg>
+          </button>
+        </footer>
+      </div>
+    </div>
+
+    <script src="duihua.js" defer></script>
+  </body>
+</html>

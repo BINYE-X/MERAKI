@@ -1,0 +1,198 @@
+/* 精肴 MERAKI — 全站底部导航（430×932） */
+
+.mk-tabbar {
+  --mint: #78b890;
+  --mint-deep: #569d72;
+  --mint-shadow: rgba(70, 130, 95, 0.48);
+  --green: #275d47;
+  --green-deep: #1e4a38;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 40px;
+  z-index: 30;
+  padding: 0 clamp(0.65rem, 2.5vw, 1rem) max(0.5rem, env(safe-area-inset-bottom, 0px));
+  pointer-events: auto;
+  opacity: 0;
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.18s;
+}
+
+.mk-tabbar.mk-tabbar--in {
+  opacity: 1;
+}
+
+.mk-tabbar__glass {
+  pointer-events: auto;
+  border-radius: 1.35rem;
+  padding: 1px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(236, 244, 239, 0.9) 100%);
+  box-shadow:
+    0 12px 40px rgba(35, 55, 45, 0.12),
+    0 4px 14px rgba(0, 0, 0, 0.05),
+    0 1px 0 rgba(255, 255, 255, 0.9) inset;
+}
+
+.mk-tabbar__inner {
+  position: relative;
+  border-radius: calc(1.35rem - 1px);
+  background: rgba(255, 255, 255, 0.74);
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  overflow: visible;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.65) inset;
+}
+
+.mk-tabbar__pill {
+  position: absolute;
+  top: 7px;
+  bottom: 9px;
+  left: 0;
+  width: 20%;
+  border-radius: 999px;
+  background: rgba(120, 184, 144, 0.22);
+  border: 1px solid rgba(120, 184, 144, 0.42);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+  z-index: 0;
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.38s cubic-bezier(0.28, 0.85, 0.35, 1), width 0.32s ease;
+  pointer-events: none;
+}
+
+.mk-tabbar__tabs {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 4.5rem 1fr 1fr;
+  align-items: flex-end;
+  min-height: 3.4rem;
+  padding: 0.4rem 0.2rem 0.5rem;
+}
+
+.mk-tab[data-tab="0"] {
+  grid-column: 1;
+}
+
+.mk-tab[data-tab="1"] {
+  grid-column: 2;
+}
+
+.mk-fab {
+  grid-column: 3;
+  justify-self: center;
+  align-self: end;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(3.45rem + 1px);
+  height: calc(3.45rem + 1px);
+  margin-bottom: 0.35rem;
+  padding: 0;
+  border: none;
+  border-radius: 1.05rem;
+  color: #ffffff;
+  cursor: pointer;
+  touch-action: manipulation;
+  background: linear-gradient(165deg, #8fc9a4 0%, var(--mint) 42%, var(--mint-deep) 100%);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.45) inset,
+    0 10px 22px var(--mint-shadow),
+    0 3px 8px rgba(0, 0, 0, 0.08);
+  transform: translateY(3px);
+  transition: transform 0.22s cubic-bezier(0.33, 0.72, 0.45, 1), box-shadow 0.22s ease, filter 0.2s ease;
+}
+
+.mk-fab:active {
+  transform: translateY(5px) scale(0.94);
+  filter: brightness(0.95);
+}
+
+.mk-tab[data-tab="2"] {
+  grid-column: 4;
+}
+
+.mk-tab[data-tab="3"] {
+  grid-column: 5;
+}
+
+.mk-tab {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.12rem;
+  padding: 0.2rem 0.15rem 0.15rem;
+  font: inherit;
+  color: #8a9a92;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: color 0.26s ease, transform 0.2s cubic-bezier(0.33, 0.72, 0.45, 1);
+}
+
+.mk-tab[data-tab="0"],
+.mk-tab[data-tab="1"],
+.mk-tab[data-tab="2"],
+.mk-tab[data-tab="3"] {
+  transform: translateY(-5px);
+}
+
+.mk-tab[data-tab="0"]:active,
+.mk-tab[data-tab="1"]:active,
+.mk-tab[data-tab="2"]:active,
+.mk-tab[data-tab="3"]:active {
+  transform: translateY(-5px) scale(0.94);
+}
+
+.mk-tab__icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(1.5rem + 1px);
+  opacity: 0.9;
+  transition: opacity 0.25s ease, color 0.25s ease;
+}
+
+.mk-tab__icon svg {
+  display: block;
+}
+
+.mk-tab__icon::after {
+  content: "";
+  display: none;
+  width: 6px;
+  height: 6px;
+  margin-top: 3px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.mk-tab--active[data-tab="0"] .mk-tab__icon::after,
+.mk-tab--active[data-tab="1"] .mk-tab__icon::after,
+.mk-tab--active[data-tab="2"] .mk-tab__icon::after,
+.mk-tab--active[data-tab="3"] .mk-tab__icon::after {
+  display: block;
+}
+
+.mk-tab__label {
+  font-size: calc(0.62rem + 1px);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.mk-tab--active {
+  color: var(--green-deep);
+}
+
+.mk-tab--active .mk-tab__icon {
+  opacity: 1;
+  color: var(--green);
+}
+
+.mk-tab:focus {
+  outline: none;
+}
